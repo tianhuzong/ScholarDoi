@@ -1,6 +1,6 @@
 # scholar-doi 学术文献下载工具
 
-输入 DOI 查询并下载**开放获取(OA)**学术文献的 Python 工具。
+输入 DOI 查询并下载 **开放获取(OA)** 学术文献的 Python 工具。
 支持单个 / 批量 DOI、元数据导出（CSV/JSON），并内置一个可选的本地网页版界面。兼容 **Python 3.8+**，核心功能仅依赖标准库。
 
 ---
@@ -20,13 +20,7 @@
 ## 📦 安装
 
 ```bash
-# 推荐：创建虚拟环境(可选)
-python -m venv .venv
-source .venv/bin/activate   # Linux/macOS；Windows 用 .venv\Scripts\activate
-
-# 核心功能无需任何第三方库，Python 3.8+ 即可运行
-# 如需网页版：
-pip install -r requirements.txt   # 安装 flask
+pip install -r requirements.txt   # 安装 flask即可
 ```
 
 ---
@@ -74,7 +68,7 @@ python -m scholar_doi.cli --help   # 查看帮助
 
 ## 🧠 合规与版权说明（重要）
 
-- 本工具**仅下载开放获取(OA)**的合法文献，默认通过 Crossref + Unpaywall 等开放接口查询，**不采集、不绕过付费墙**。
+- 本工具 **仅下载开放获取(OA)** 的合法文献，默认通过 Crossref + Unpaywall 等开放接口查询，**不采集、不绕过付费墙**。
 - **付费墙限制**：JACS、Nature 等订阅期刊的非 OA 付费文章，Unpaywall 会标记为 `非 OA`，本工具不会也无法获取其正文 PDF（除非你有机构订阅并通过浏览器访问）。
 - **反爬限制**：部分出版社（如 **MDPI、ACS、PMC**）对脚本直接下载设有 Cloudflare / JS 验证等反爬机制。即使文章是 OA，脚本也可能被 403 拦截。此时请用浏览器打开工具输出的落地页下载。
 - 原始可下载内容版权归属各出版社，请遵守相应许可（CC、订阅协议等），仅用于个人学习与合法研究。
@@ -103,7 +97,15 @@ scholar-doi/
 
 ## 📇 元数据导出字段
 
-DOI / 标题 / 作者 / 期刊 / 年份 / 出版社 / 类型 / 是否OA / OA状态 / PDF地址 / 落地页 / 本地保存文件。
+| 元数据导出字段 |
+|:---:|
+| DOI |
+| 标题 |
+| 作者 |
+| 期刊 |
+| 年份 |
+| OA状态 |
+| PDF地址(如果有的话) |
 
 ---
 
@@ -126,3 +128,17 @@ A: MDPI 是 OA 期刊，但其网站设有 Cloudflare 反爬，脚本直接访�
 ## 🔒 隐私
 
 工具仅向 Crossref / Unpaywall 发送 DOI 与你提供的邮箱，不上传任何其他个人数据。
+
+## 开源协议
+
+MIT
+
+```txt
+Copyright 2026 Sen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
